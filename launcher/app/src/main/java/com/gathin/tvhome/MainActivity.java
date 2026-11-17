@@ -574,6 +574,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             clock.addOnLayoutChangeListener(centerGreeting);
             clockRow.addOnLayoutChangeListener(centerGreeting);
         }
+        View btnQuran = findViewById(R.id.btnQuran);
+        if (btnQuran != null) btnQuran.setOnClickListener(v -> startActivity(new Intent(this, QuranActivity.class)));
         btnWifi = findViewById(R.id.btnWifi);
         shamsiDate = findViewById(R.id.shamsiDate);
         stats = findViewById(R.id.stats);

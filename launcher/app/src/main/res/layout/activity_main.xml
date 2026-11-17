@@ -334,6 +334,12 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/btnQuran"
+                    style="@style/TopButton"
+                    android:text="القرآن الكريم"
+                    android:nextFocusDown="@+id/grid" />
+
+                <TextView
                     android:id="@+id/btnInputs"
                     style="@style/TopButton"
                     android:text="@string/inputs"

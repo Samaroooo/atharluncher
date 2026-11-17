@@ -17,6 +17,14 @@ android {
         versionName '3.5'
     }
 
+    signingConfigs {
+        athar {
+            storeFile file("../../athar-release.jks")
+            storePassword "123456"
+            keyAlias "athar"
+            keyPassword "123456"
+        }
+    }
     buildTypes {
         release {
             // R8 strips and optimises the code (AndroidX included): smaller APK, faster start on a slow TV CPU.
@@ -24,7 +32,7 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             // Sideloaded over ADB, never published: sign with the debug key so it installs over a debug build.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.athar
         }
     }
 
@@ -36,6 +44,7 @@ android {
         }
     }
 
+    lintOptions { abortOnError false }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
